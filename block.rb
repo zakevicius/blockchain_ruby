@@ -1,10 +1,9 @@
 # frozen_string_literal
 require 'date'
+require './config/config'
 
 class Block
-  include Config
-
-  attr_reader :timestamp, :last_hash, :hash, :data
+  attr_accessor :timestamp, :last_hash, :hash, :data
 
   def initialize(options)
     @timestamp = options[:timestamp]
