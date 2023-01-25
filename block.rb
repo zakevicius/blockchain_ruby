@@ -26,7 +26,7 @@ class Block
 
       begin
       nonce += 1
-      timestamp = Time.now.to_i
+      timestamp = DateTime.now.strftime('%Q').to_i
       hash = CryptoHash.new(timestamp, last_hash, options[:data], nonce, difficulty).hex_digest
       difficulty = adjust_difficulty({
                                        original_block: options[:last_block],

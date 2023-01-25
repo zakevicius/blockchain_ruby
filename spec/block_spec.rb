@@ -6,7 +6,7 @@ require './block'
 require './crypto_hash'
 
 RSpec.describe Block do
-  let(:timestamp) { 1674652647 }
+  let(:timestamp) { 1674659416742 }
   let(:last_hash) { 'foo-hash' }
   let(:hash) { 'bar_hash' }
   let(:data) { %w[blockchain data] }
