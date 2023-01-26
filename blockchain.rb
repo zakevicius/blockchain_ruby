@@ -18,6 +18,18 @@ class Blockchain
     @chain << new_block
   end
 
+  def replace_chain(new_chain)
+    p "The incoming chain must be longer" and return if new_chain.length <= @chain.length
+
+    p "The chain must be valid" and return unless Blockchain::valid_chain?(new_chain)
+
+    @chain = new_chain
+
+    p 'Replacing chain'
+
+    nil
+  end
+
   class << self
     def valid_chain?(chain)
       return false unless JSON.generate(chain.first.to_h) == JSON.generate(Block.genesis.to_h)
